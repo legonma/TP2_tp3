@@ -1,0 +1,21 @@
+{
+  "name": "tp3",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Tp3_Mariano_legon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "LegonMariano",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "Tp3_Mariano_legon"
+  }
+}
