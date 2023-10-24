@@ -50,7 +50,7 @@ class Model_BibliotecaFile {
 
     guardarLibro = async (libro) => {
         try {
-            if (libro.titulo && libro.autor && libro.year) {
+            if (libro.titulo && libro.autor && libro.year && Object.keys(libro).length < 4) {
                 const libros = await this.leerArchivo();
                 libro.id = String(parseInt(libros[libros.length - 1]?.id || 0) + 1);
                 libro.titulo = String(libro.titulo)|| '';
@@ -77,7 +77,6 @@ class Model_BibliotecaFile {
                 const libroActualizado = {...libroActual, ...libro};
                 libros.splice(index, 1, libroActualizado);
                 await this.escribirLibro(libros);
-
                 return libroActualizado;
             } else {
                 libros.push(libro);
@@ -85,7 +84,7 @@ class Model_BibliotecaFile {
                 return libro;
             }
         } catch (err) {
-            throw new Error('error al actualizar: ' + err);
+            throw ('error al actualizar: ' + err);
         }
     }
 
@@ -101,7 +100,6 @@ class Model_BibliotecaFile {
             return libro;
         } catch {
             throw (`no se logro borrar el libro`);
-            return {};
         }
     }
 }

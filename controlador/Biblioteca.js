@@ -26,7 +26,6 @@ class Controlador_Biblioteca {
             const libroGuardado = await this.servicio.guardarLibro(libro);
             //res.json(libroGuardado);
             res.redirect('/');
-    
         } catch (error) {
             const { url:ruta, method:metodo } = req
             res.status(500).send(`<h3 style="color: red;">Error : ${ruta} / método: ${metodo} -> no implementada\n Error: ${error}</h3>`)
